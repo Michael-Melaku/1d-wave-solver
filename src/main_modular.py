@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+import os
+
+fig_dir = '../plots/'
+
 
 # --- 1. Configuration & Initialization ---
 
@@ -123,8 +127,11 @@ def run_simulation():
     
     #print("Starting simulation window...")
     #plt.show()
-
-    anim.save('wave_animation.gif', writer='pillow', fps=30)
+    
+    filename = 'wave_animation.gif'
+    filename = os.path.join(fig_dir,filename)
+    #anim.save('../plots/wave_animation.gif', writer='pillow', fps=30)
+    anim.save(filename, writer='pillow', fps=30)
     print("Animation saved as wave_animation.gif")
 
 
