@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+The one-dimensional wave equation is
+\[
+\frac{\partial^2 u}{\partial t^2}
+=
+c^2 \frac{\partial^2 u}{\partial x^2}.
+\]
+
+Define a uniform grid
+\[
+x_i = i \Delta x, \quad t^n = n \Delta t,
+\quad u_i^n \approx u(x_i,t^n).
+\]
+
+Using second-order central differences,
+\[
+\frac{u_i^{n+1} - 2u_i^n + u_i^{n-1}}{(\Delta t)^2}
+=
+c^2
+\frac{u_{i+1}^n - 2u_i^n + u_{i-1}^n}{(\Delta x)^2}.
+\]
+
+Solving for $u_i^{n+1}$ gives
+\[
+u_i^{n+1}
+=
+2u_i^n - u_i^{n-1}
++
+\lambda^2
+\left(
+u_{i+1}^n - 2u_i^n + u_{i-1}^n
+\right),
+\]
+where
+\[
+\lambda = \frac{c\Delta t}{\Delta x}.
+\]
+
+The stability condition is
+\[
+\lambda \le 1.
+\]
+
+\end{document}
+
